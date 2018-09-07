@@ -2,11 +2,17 @@ body {
     margin: 0;
     text-align: center;
     font-family: monospace;
+    background: #594c26;
+    padding: 17vw 0 30px;
 }
 
-h1 {
-    margin: 20px 0 0;
+#header {
+    margin: 0;
     padding: 0;
+    font-size: 15vw;
+    position: fixed;
+    top: 0;
+    z-index: -1;
 }
 
 h2 {
@@ -22,4 +28,14 @@ h2 {
 .days-since {
     font-size: 34px;
     font-weight: bold;
+}
+
+#howard {
+    position: fixed;
+    bottom: 0;
+    right: -100px;
+}
+
+#footer {
+    margin-top: 150px;
 }
