@@ -5,6 +5,7 @@ const photos = [
     "4.jpg",
     "5.jpg",
     "6.jpg",
+    "7.jpg",
 ];
 
 function main(event) {
@@ -15,9 +16,9 @@ function main(event) {
 
     // days since
     const req = new Request("https://poly.rpi.edu/wp-json/wp/v2/posts?per_page=1")
-    fetch(req).then(function(resp) {
+    fetch(req).then(function (resp) {
         return resp.json()
-    }).then(function(resp) {
+    }).then(function (resp) {
         const polyDate = new Date(resp[0]["date"]);
         const diff = Math.floor((Date.now() - polyDate) / 86400000);
         const daysSinceSpan = document.getElementsByClassName("days-since")[0];
