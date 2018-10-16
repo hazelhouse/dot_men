@@ -27,7 +27,7 @@ h2 {
     margin: 20px auto;
 }
 
-.days-since {
+.days-since, .shuttle-tracker {
     font-size: 34px;
     font-weight: bold;
     margin-bottom: 60px;
