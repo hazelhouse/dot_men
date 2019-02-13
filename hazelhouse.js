@@ -16,14 +16,24 @@ function main(event) {
     photoDiv.setAttribute("src", "photos/" + photo);
 
     // days since
-    var req = new Request("https://poly.rpi.edu/wp-json/wp/v2/posts?per_page=1")
+    var req = new Request("https://poly.rpi.edu/wp-json/wp/v2/posts?categories=5&per_page=20")
     fetch(req).then(function (resp) {
         return resp.json()
     }).then(function (resp) {
-        const polyDate = new Date(resp[0]["date"]);
-        const diff = Math.floor((Date.now() - polyDate) / 86400000);
         const daysSinceSpan = document.getElementsByClassName("days-since")[0];
-        daysSinceSpan.innerHTML = diff;
+
+        // find Senate article
+        for (const article of resp) {
+            if (article["Kicker"].toLowerCase() === "student senate") {
+                const polyDate = new Date(article["date"]);
+                const diff = Math.floor((Date.now() - polyDate) / 86400000);
+                daysSinceSpan.innerHTML = diff + " days";
+                return;
+            }
+        }
+
+        // no Senate article
+        daysSinceSpan.innerHTML = "🤷";
     });
 
     // Shuttle Tracker
