@@ -9,6 +9,8 @@ const photos = [
     "8.jpg",
     "9.jpeg",
     "10.jpeg",
+    "11.jpeg",
+    "12.jpeg",
 ];
 
 function main(event) {
